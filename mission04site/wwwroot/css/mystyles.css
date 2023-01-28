@@ -1,0 +1,12 @@
+﻿body {
+}
+
+input {
+    width:60px;
+
+}
+
+label {
+    width:150px;
+    display: inline-block;
+}
