@@ -16,16 +16,33 @@ namespace mission04site
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddControllersWithViews();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            // This makes it load up the index.html
-            app.UseDefaultFiles();
+
+            if (env.IsEnvironment("Development"))
+            {
+                // Gives us a more detailed exception page
+                app.UseDeveloperExceptionPage();
+            }
+            
 
             // This makes it use the static files in the wwwroot
             app.UseStaticFiles();
+
+            app.UseRouting();
+
+            // Tell app to use the default endpoints
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.MapControllerRoute(
+                    name: "default",
+                    pattern: "{controller=Home}/{action=Index}/{id?}"
+                   );
+            });
         }
     }
 }

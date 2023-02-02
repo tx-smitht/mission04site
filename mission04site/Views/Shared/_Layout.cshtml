@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+
+    <!-- Linking in the CSS files -->
+    <link href="~/lib/bootstrap/css/bootstrap.css" rel="stylesheet" />
+    <link href="~/css/mystyles.css" rel="stylesheet" />
+    <link rel="icon" type="image/x-icon" href="~/img/txfavicon.png">
+
+
+</head>
+<body>
+    <nav>
+        <a asp-controller="Home" asp-action="Index">Home</a>
+        <a asp-controller="Home" asp-action="GradeCalc">Grade Calculator</a>
+    </nav>
+    <div>
+        @RenderBody()
+    </div>
+
+    <!-- Linking in the script files -->
+    <script src="~/lib/jquery/jquery-3.6.3.min.js"></script>
+    <script src="~/js/script.js"></script>
+</body>
+</html>
