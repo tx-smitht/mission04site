@@ -3,27 +3,30 @@
 *@
 @{
 }
+@model GradeCalculatorModel
 <h3>Here is a grade calculator for your enjoyment!</h3>
 <div>
-    <form>
+    <form method="post">
         <label>Assignments:</label>
-        <input type="number" id="assignments" name="assignments" value="" /><br />
+        <input id="assignments" asp-for="Assignments" /><br />
         <label>Group Project:</label>
-        <input type="number" id="groupproject" name="groupproject" value="" /><br />
+        <input id="groupproject" asp-for="GroupProjects" /><br />
         <label>Quizzes:</label>
-        <input type="number" id="quizzes" name="quizzes" value="" /><br />
+        <input id="quizzes" asp-for="Quizzes" /><br />
         <label>Midterm Exam:</label>
-        <input type="number" id="midterm" name="midterm" value="" /><br />
+        <input id="midterm" asp-for="Midterm" /><br />
         <label>Final Exam:</label>
-        <input type="number" id="final" name="final" value="" /><br />
+        <input id="final" asp-for="Final" /><br />
         <label>INTEX:</label>
-        <input type="number" id="intex" name="intex" value="" /><br />
-        <input style="width:auto; text-align:center" type="button" id="calculategrade" name="calculategrade" value="Calculate Grade" />
+        <input id="intex" asp-for="INTEX" /><br />
+        <input style="width:auto; text-align:center" type="submit" id="calculategrade" name="calculategrade" value="Calculate Grade" />
         <br /><br />
-        <label>Final Grade Average:</label>
-        <input type="number" id="final_grade_avg" name="final_grade_avg" value="" /><br />
-        <label>Final Letter Grade:</label>
-        <input type="text" id="final_letter_grade" name="final_letter_grade" value="" /><br />
 
     </form>
+    <div asp-validation-summary="All"></div>
+    @* Show Results *@
+    <label>Final Grade Average:</label>
+    <input type="number" id="final_grade_avg" name="final_grade_avg" value="" /><br />
+    <label>Final Letter Grade:</label>
+    <input type="text" id="final_letter_grade" name="final_letter_grade" value="" /><br />
 </div>

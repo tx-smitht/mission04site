@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using mission04site.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,9 +17,17 @@ namespace mission04site.Controllers
         }
 
         // Render the GradeCalc page
+        [HttpGet]
         public IActionResult GradeCalc()
         {
             return View();
         }
+
+        [HttpPost]
+        public IActionResult GradeCalc(GradeCalculatorModel model)
+        {
+            return View();
+        }
+
     }
 }
